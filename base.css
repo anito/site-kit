@@ -99,7 +99,7 @@ body {
 
 /*	base reset ----------------------------- */
 html {
-	font-size: 100%;
+	font-size: 80%;
 	-webkit-text-size-adjust: 100%;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	box-sizing: border-box;
