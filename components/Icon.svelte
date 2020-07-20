@@ -17,6 +17,7 @@
 
 <style>
 	.icon {
+		display: inline;
 		position: relative;
 		overflow: hidden;
 		vertical-align: middle;

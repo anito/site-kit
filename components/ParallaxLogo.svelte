@@ -10,9 +10,9 @@
 <style>
 	.parallax {
 		position: absolute;
-		top: -4rem;
+		top: 7.5rem;
 		right: 0rem;
-		width: 50rem;
+		width: 31.25rem;
 		will-change: transform;
 		display: none;
 	}
@@ -25,7 +25,7 @@
 
 	@media (min-width: 1200px) {
 		.parallax {
-			right: calc(50vw - 60rem);
+			right: calc(50vw - 37.5rem);
 		}
 	}
 </style>

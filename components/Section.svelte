@@ -1,9 +1,9 @@
 <style>
 	section {
 		position: relative;
-		margin: 10rem auto;
+		margin: 6.25rem auto;
 		padding: 0 var(--side-nav);
-		max-width: 120rem;
+		max-width: 75rem;
 	}
 
 	section :global(h3) {

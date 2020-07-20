@@ -10,33 +10,33 @@
 <style>
 	.hero {
 		position: relative;
-		margin: 10rem auto;
+		margin: 6.25rem auto;
 		padding: 0 var(--side-nav);
-		max-width: 120rem;
+		max-width: 75rem;
 	}
 
 	h3 { color: var(--text) }
 
 	.hero {
-		margin: 10rem auto;
+		margin: 6.25rem auto;
 	}
 
 	.hero h3, .logotype {
 		position: relative;
-		left: 1.6rem;
+		left: 1rem;
 	}
 
 	.hero h3 {
-		font-size: 2rem;
+		font-size: 1.25rem;
 	}
 
 	.logotype {
-		height: 4rem;
+		height: 2.5rem;
 	}
 
 	@media (min-width: 640px) {
 		.logotype {
-			height: 6rem;
+			height: 3.75rem;
 		}
 
 		.hero h3 {
@@ -46,11 +46,17 @@
 
 	@media (min-width: 800px) {
 		.hero {
-			margin: 15rem auto;
+			margin: 9.375rem auto;
 		}
 
 		.hero h3, .logotype {
-			left: 3rem;
+			left: 1.875rem;
+		}
+	}
+
+	@media (min-width: 1100px) {
+		.logotype {
+			height: 5.75rem;
 		}
 	}
 </style>

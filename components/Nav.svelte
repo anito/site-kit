@@ -9,6 +9,7 @@
 	export let home = 'Home';
 	export let home_title = 'Homepage';
 
+	const showHome = true;
 	const current = writable(null);
 	setContext('nav', current);
 
@@ -141,30 +142,30 @@
 
 	ul :global(li) :global(a) {
 		font-size: var(--h5);
-		padding: 0 .8rem;
+		padding: 0 .5rem;
 		border: none;
 		color: inherit;
 	}
 
 	ul.open :global(li) :global(a) {
-		padding: 1.5rem 3.7rem 1.5rem 4rem;
+		padding: 0.9375rem 2.3125rem 0.9375rem 2.5rem;
 		display: block;
 	}
 
 	ul.open :global(li):first-child :global(a) {
-		padding-top: 2.3rem;
+		padding-top: 1.4375rem;
 	}
 
 	.primary :global(svg) {
-		width: 2rem;
-		height: 2rem;
+		width: 1.25rem;
+		height: 1.25rem;
 	}
 
 	.home {
 		position: relative;
 		top: -.1rem;
-		width: 18rem;
-		height: 4.2rem;
+		width: 11.25rem;
+		height: 3.525rem;
 		-webkit-tap-highlight-color: transparent;
 		-webkit-touch-callout: none;
 		background: 0 50% no-repeat;
@@ -216,7 +217,7 @@
 
 		ul.open :global(li) :global(a) {
 			font-size: var(--h5);
-			padding: 0 .8rem;
+			padding: 0 0.5rem;
 			display: inline;
 		}
 
@@ -257,7 +258,7 @@
 			on:mouseenter="{() => open = true}"
 			on:mouseleave="{() => open = false}"
 		>
-			<li class="hide-if-desktop" class:active="{!segment}"><a rel="prefetch" href=".">{home}</a></li>
+			<li class:hide-if-desktop={!showHome} class:active="{!segment}"><a rel="prefetch" href=".">{home}</a></li>
 			<slot></slot>
 		</ul>
 	</nav>
