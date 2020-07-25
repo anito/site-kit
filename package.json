@@ -17,7 +17,7 @@
     "#DEV:/",
     "#USER"
   ],
-  "_resolved": "github:anito/site-kit#99ccc1adeff08db641aac8cc5a07ea2fd9ad40ff",
+  "_resolved": "github:anito/site-kit#53db32f32308912a263354f56f60aed1a696468d",
   "_spec": "anito/site-kit",
   "_where": "/Library/Server/Web/Data/Sites/physio-dips-app",
   "author": {
@@ -29,8 +29,8 @@
   "bundleDependencies": false,
   "dependencies": {
     "@sindresorhus/slugify": "^0.9.1",
-    "golden-fleece": "^1.0.9",
-    "dropzone": "^5.7.1"
+    "dropzone": "^5.7.1",
+    "golden-fleece": "^1.0.9"
   },
   "deprecated": false,
   "description": "Styles and components for use in *.svelte.dev websites",

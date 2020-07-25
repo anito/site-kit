@@ -1,10 +1,11 @@
 <script>
   import { onMount } from "svelte";
   import Dropzone from "dropzone";
+
   export let dropzoneEvents = {};
   export let options = { previewTemplate: "<div/>" };
   export let dropzoneClass = "dropzone";
-  export let hooveringClass = "dropzone-hoovering";
+  export let hoveringClass = "dropzone-hovering";
   export let id = "dropId";
   export let autoDiscover = false;
 
@@ -25,14 +26,14 @@
     }
 
     svDropzone.on("addedfile", f => {
-      dropzoneElement.classList.remove(hooveringClass);
+      dropzoneElement.classList.remove(hoveringClass);
     });
     svDropzone.on("dragenter", e => {
       console.log(dropzoneElement);
-      dropzoneElement.classList.toggle(hooveringClass);
+      dropzoneElement.classList.toggle(hoveringClass);
     });
     svDropzone.on("dragleave", e => {
-      dropzoneElement.classList.toggle(hooveringClass);
+      dropzoneElement.classList.toggle(hoveringClass);
     });
     Object.entries(dropzoneEvents).map(([eventKey, eventFunc]) =>
       svDropzone.on(eventKey, eventFunc)
@@ -49,23 +50,22 @@
 
 <style>
   .dropzone {
-    height: 300px;
-    background: #fdfdfd;
+    height: 200px;
     border-radius: 5px;
-    border: 2px dashed #ff3e00;
+    border: 2px dashed var(--prime);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 300ms ease-out;
   }
 
-  .dropzone.dropzone-hoovering {
-    border: 2px solid #ff3e00;
+  .dropzone.dropzone-hovering {
+    border: 2px solid var(--prime);
     background: rgba(255, 62, 0, 0.05);
   }
 </style>
 
-<div action="#" class={dropzoneClass} {id}>
+<div class={dropzoneClass} {id}>
   <slot />
   <input hidden name="sites_data" type="file" />
 </div>

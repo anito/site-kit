@@ -3,7 +3,7 @@
   export let dropzoneEvents = {};
   export let options = { previewTemplate: "<div/>" };
   export let dropzoneClass = "dropzone";
-  export let hooveringClass = "dropzone-hoovering";
+  export let hoveringClass = "dropzone-hoovering";
   export let id = "dropId";
   export let autoDiscover = false;
 
@@ -26,7 +26,8 @@
   {dropzoneEvents}
   {options}
   {dropzoneClass}
-  {hooveringClass}
+  {hoveringClass}
+  {autoDiscover}
   {id}>
   <slot>
     <p class="dropzoneDefaultSentence">
