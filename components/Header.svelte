@@ -20,13 +20,13 @@
         const header = document.createElement( `h${h}` );
         mdc && header.classList.add(`mdc-typography--headline${h}`);
 		header.append(container.childNodes[0]);
-		container.append(header);
+		container.prepend(header);
 	})
 
 </script>
 
 <style>
-    [class*="mdc-typography--headline"] {
+    :global([class*="mdc-typography--headline"]) {
         margin: 0.2em 0 0.5em;
     }
 </style>

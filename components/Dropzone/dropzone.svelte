@@ -18,7 +18,7 @@
       options.dictDefaultMessage = "";
     }
 
-    let svDropzone = new Dropzone(`div#${id}`, {
+    let svDropzone = new Dropzone(`#${id}`, {
       ...options
     });
     if (autoDiscover !== true) {
@@ -50,6 +50,8 @@
 
 <style>
   .dropzone {
+    position: relative;
+    z-index: 1;
     height: 200px;
     border-radius: 5px;
     border: 2px dashed var(--prime);

@@ -3,7 +3,7 @@
   export let dropzoneEvents = {};
   export let options = { previewTemplate: "<div/>" };
   export let dropzoneClass = "dropzone";
-  export let hoveringClass = "dropzone-hoovering";
+  export let hoveringClass = "dropzone-hovering";
   export let id = "dropId";
   export let autoDiscover = false;
 
