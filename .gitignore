@@ -1,10 +1,7 @@
 # osx noise
 .DS_Store
 profile
-<<<<<<< HEAD
-=======
 node_modules
->>>>>>> 98f0b6f2241169130a7cbb58d2d6306869ce168d
 
 # xcode noise
 build/*
