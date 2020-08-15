@@ -21,6 +21,7 @@
         mdc && header.classList.add(`mdc-typography--headline${h}`);
 		header.append(container.childNodes[0]);
 		container.prepend(header);
+		console.log()
 	})
 
 </script>
