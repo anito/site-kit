@@ -20,7 +20,7 @@
         const header = document.createElement( `h${h}` );
         mdc && header.classList.add(`mdc-typography--headline${h}`);
 		header.append(container.childNodes[0]);
-		container.prepend(header);
+		// container.prepend(header);
 	})
 
 </script>
