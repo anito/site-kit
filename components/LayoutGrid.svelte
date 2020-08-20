@@ -24,7 +24,7 @@
     :global(.grid-item.has-background.ad) {
         background: var(--alt)
     }
-    .wrapper {
+    .grid {
         display: grid;
         grid-gap: 5px;
         grid-template-rows: 10fr 1fr 1fr;
@@ -34,30 +34,31 @@
             "footer"
             "ad";
         height: calc(100vh - var(--nav-h));
+        align-items: stretch;
     }
-    .wrapper.full-grid {
+    .grid.full-grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:
             "content"
     }
 
-    .wrapper :global(.content) {
+    .grid :global(.content) {
         grid-area: content
     }
-    .wrapper :global(.side) {
+    .grid :global(.side) {
         grid-area: side
     }
-    .wrapper :global(.footer) {
+    .grid :global(.footer) {
         grid-area: footer
     }
-    .wrapper :global(.ad) {
+    .grid :global(.ad) {
         grid-area: ad
     }
 
     @media (min-width: 900px) {
 
-        .wrapper {
+        .grid {
             grid-template-columns: var(--sidebar-w) 3fr;
             grid-template-rows: auto 60px;
             grid-template-areas:
@@ -67,7 +68,7 @@
     }
     @media (min-width: 1200px) {
 
-        .wrapper {
+        .grid {
             grid-template-columns: 1fr 4fr 1fr 1fr;
 
             grid-template-areas:
@@ -79,7 +80,7 @@
 </style>
 
 <main>
-    <div class:full-grid={!segment} class="wrapper">
+    <div class:full-grid={!segment} class="grid">
         <slot></slot>
     </div>
 </main>
