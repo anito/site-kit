@@ -1,6 +1,9 @@
 <script>
 
     export let segment;
+    let className = '';
+    export {className as class};
+    export let stretch = false;
 </script>
 
 <style>
@@ -34,7 +37,6 @@
             "footer"
             "ad";
         height: calc(100vh - var(--nav-h));
-        align-items: stretch;
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
@@ -80,7 +82,10 @@
 </style>
 
 <main>
-    <div class:full-grid={!segment} class="grid">
+    <div class:full-grid={!segment} class="
+        grid
+        {className}
+        {stretch ? 'stretch' : ''}">
         <slot></slot>
     </div>
 </main>
