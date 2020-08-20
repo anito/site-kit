@@ -29,7 +29,6 @@
       dropzoneElement.classList.remove(hoveringClass);
     });
     svDropzone.on("dragenter", e => {
-      console.log(dropzoneElement);
       dropzoneElement.classList.toggle(hoveringClass);
     });
     svDropzone.on("dragleave", e => {
