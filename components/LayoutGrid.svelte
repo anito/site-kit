@@ -30,13 +30,22 @@
     .grid {
         display: grid;
         grid-gap: 5px;
-        grid-template-rows: 10fr 1fr 1fr;
+        grid-template-rows: 2fr 8fr 1fr 1fr;
         grid-template-columns: 1fr;
         grid-template-areas:
             "content"
-            "footer"
-            "ad";
+            "content"
+            "ad"
+            "footer";
         height: calc(100vh - var(--nav-h));
+    }
+    .grid.users {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "side"
+            "content"
+            "ad"
+            "footer";
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
@@ -44,7 +53,6 @@
         grid-template-areas:
             "content"
     }
-
     .grid :global(.content) {
         grid-area: content
     }
@@ -61,21 +69,31 @@
     @media (min-width: 900px) {
 
         .grid {
-            grid-template-columns: var(--sidebar-w) 3fr;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 60px;
             grid-template-areas:
                 "content content"
+                "ad footer"
+        }
+        .grid.users {
+            grid-template-columns: var(--sidebar-w) 6fr;
+            grid-template-areas:
+                "side content"
                 "ad footer"
         }
     }
     @media (min-width: 1200px) {
 
         .grid {
-            grid-template-columns: 1fr 4fr 1fr 1fr;
-
+            grid-template-columns: var(--sidebar-w) 6fr;
             grid-template-areas:
-                "content content content content"
-                "ad footer footer footer"
+                "content content"
+                "ad footer "
+        }
+        .grid.users {
+            grid-template-areas:
+                "side content "
+                "ad footer "
         }
     }
 
@@ -83,6 +101,7 @@
 
 <main>
     <div class:full-grid={!segment} class="
+        {segment}
         grid
         {className}
         {stretch ? 'stretch' : ''}">

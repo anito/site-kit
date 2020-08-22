@@ -1,6 +1,6 @@
 <script>
     export let name;
-    $: inner = `${name}-inner`;
+    $: inner = `grid-inner slot-${name}`;
 </script>
 
 <style>
