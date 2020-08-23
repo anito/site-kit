@@ -140,12 +140,8 @@
 			<slot name="one"></slot>
 		</div>
 
-		<div class="box" style="background: var(--flash); grid-area: two;">
+		<div class="box" style="background: var(--flash); grid-area: two / two / three / three;">
 			<slot name="two"></slot>
-		</div>
-
-		<div class="box" style="background: var(--second); grid-area: three;">
-			<slot name="three"></slot>
 		</div>
 
 		<div class="what" style="grid-area: what;">
