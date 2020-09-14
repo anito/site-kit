@@ -1,9 +1,11 @@
 <script>
 
     export let segment;
-    let className = '';
-    export {className as class};
+    export let sidebar = false;
     export let stretch = false;
+    export {className as class};
+
+    let className = '';
 </script>
 
 <style>
@@ -39,7 +41,7 @@
             "footer";
         height: calc(100vh - var(--nav-h));
     }
-    .grid.users {
+    .grid.sidebar {
         grid-template-columns: 1fr;
         grid-template-areas:
             "side"
@@ -75,7 +77,7 @@
                 "content content"
                 "ad footer"
         }
-        .grid.users {
+        .grid.sidebar {
             grid-template-columns: var(--sidebar-w) 6fr;
             grid-template-areas:
                 "side content"
@@ -90,7 +92,7 @@
                 "content content"
                 "ad footer "
         }
-        .grid.users {
+        .grid.sidebar {
             grid-template-areas:
                 "side content "
                 "ad footer "
@@ -100,11 +102,11 @@
 </style>
 
 <main>
-    <div class:full-grid={!segment} class="
+    <div class:full-grid={!segment} class:sidebar class:stretch class="
         {segment}
         grid
-        {className}
-        {stretch ? 'stretch' : ''}">
+        {className}"
+    >
         <slot></slot>
     </div>
 </main>
