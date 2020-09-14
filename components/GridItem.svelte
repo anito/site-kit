@@ -6,7 +6,7 @@
 <style>
 
     .grid-item {
-        display: none;
+        display: block;
         padding: 20px;
         background: #eee;
         position: relative;
@@ -15,10 +15,6 @@
 
     :global(.home) .grid-item {
         background: var(--back-white);
-    }
-
-    .is-item {
-        display: block;
     }
 
 </style>
