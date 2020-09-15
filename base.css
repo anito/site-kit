@@ -16,9 +16,12 @@
 	--main-width:      50rem;
 	--side-nav:        2rem;
 	--side-page:       var(--side-nav);
-
+	--player-m-x: 1rem;
+    --player-w: calc(100vw - var(--player-m-x));
 	/* easings */
 	--out-back:    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	
 }
 
 @media screen and (min-width: 768px) {
@@ -26,6 +29,7 @@
 		--side-page:  14vw;
 		--top-offset: 6.25rem;
 		--side-nav:   3rem;
+		--player-w: 400px;
 	}
 }
 
@@ -72,7 +76,6 @@ body {
 	--font: 'Overpass', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 }
-
 
 /*	fonts ---------------------------------- */
 /* overpass-300normal - latin */

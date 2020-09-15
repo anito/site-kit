@@ -32,14 +32,13 @@
     .grid {
         display: grid;
         grid-gap: 5px;
-        grid-template-rows: 2fr 8fr 1fr 1fr;
+        grid-template-rows: 2fr 8fr .5fr .5fr;
         grid-template-columns: 1fr;
         grid-template-areas:
             "content"
             "content"
             "ad"
             "footer";
-        height: calc(100vh - var(--nav-h));
     }
     .grid.sidebar {
         grid-template-columns: 1fr;
@@ -72,7 +71,7 @@
 
         .grid {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 60px;
+            grid-template-rows: 1fr;
             grid-template-areas:
                 "content content"
                 "ad footer"
@@ -106,6 +105,7 @@
         {segment}
         grid
         {className}"
+        style="min-height: calc(100vh - var(--nav-h));"
     >
         <slot></slot>
     </div>
