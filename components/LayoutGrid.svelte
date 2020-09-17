@@ -32,7 +32,7 @@
     .grid {
         display: grid;
         grid-gap: 5px;
-        grid-template-rows: 2fr 8fr .5fr .5fr;
+        grid-template-rows: 4rem auto 3rem 3rem;
         grid-template-columns: 1fr;
         grid-template-areas:
             "content"
@@ -71,7 +71,7 @@
 
         .grid {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
+            grid-template-rows: auto 3rem;
             grid-template-areas:
                 "content content"
                 "ad footer"

@@ -1,5 +1,10 @@
 <script>
     export let name = '';
+    export let hcenter = false;
+    export let vcenter = false;
+    export {className as class};
+
+    let className = '';
     $: inner = `grid-inner slot-${name}`;
 </script>
 
@@ -16,8 +21,22 @@
         background: var(--back-white);
     }
 
+    .hcenter {
+        display: flex !important;
+        justify-content: center;
+        
+    }
+
+    .vcenter {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 </style>
 
-<div class="grid-item {name}" class:is-item={name}>
-    <slot inner={inner}></slot>
+<div class="grid-item {name}" class:is-item={name} class:vcenter>
+    <div class="mx-2 {className}" class:hcenter>
+        <slot inner={inner}></slot>
+    </div>
 </div>
