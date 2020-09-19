@@ -36,7 +36,7 @@
 </style>
 
 <div class="grid-item {name}" class:is-item={name} class:vcenter>
-    <div class="mx-2 {className}" class:hcenter>
+    <div class="{className}" class:hcenter>
         <slot inner={inner}></slot>
     </div>
 </div>
