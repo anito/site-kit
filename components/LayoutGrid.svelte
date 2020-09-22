@@ -39,6 +39,7 @@
             "content"
             "ad"
             "footer";
+        min-height: var(--main-h);
     }
     .grid.sidebar {
         grid-template-columns: 1fr;
@@ -105,7 +106,7 @@
         {segment}
         grid
         {className}"
-        style="min-height: calc(100vh - var(--nav-h));"
+        style="min-height: var(-main-h);"
     >
         <slot></slot>
     </div>

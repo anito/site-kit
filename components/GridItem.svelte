@@ -17,14 +17,22 @@
         align-self: normal;
     }
 
+    :global(.content) .outer {
+        margin: 0;
+    }
+
     :global(.home) .grid-item {
         background: var(--back-white);
     }
 
-    .hcenter {
-        display: flex !important;
+    .outer {
+        display: flex;
+        margin: 0 1.25rem 0 1.25rem;
         justify-content: center;
-        
+    }
+
+    .inner {
+        width: 100%;
     }
 
     .vcenter {
@@ -33,10 +41,22 @@
         justify-content: center;
     }
 
+    @media (min-width: 1024px) {
+        .outer {
+            justify-content: initial;
+        }
+        .outer.hcenter {
+            justify-content: center;
+            
+        }
+    }
+
 </style>
 
 <div class="grid-item {name}" class:is-item={name} class:vcenter>
-    <div class="{className}" class:hcenter>
-        <slot inner={inner}></slot>
+    <div class="outer {className}" class:hcenter>
+        <div class="inner">
+            <slot inner={inner}></slot>
+        </div>
     </div>
 </div>

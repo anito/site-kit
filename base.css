@@ -9,6 +9,7 @@
 */
 :root {
 	--nav-h:			3.75rem;
+	--main-h:			calc(100vh - var(--nav-h));
 	--top-offset:		3.75rem;
 	--sidebar-w:		15.35rem;
 	--sidebar-mid-w:	22.5rem;
