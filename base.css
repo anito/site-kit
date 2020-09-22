@@ -7,6 +7,9 @@
 	- under normal conditions, there's no need to touch these
 -----------------------------------------------
 */
+:root.ismobile {
+	--main-h:			-webkit-fill-available;
+}
 :root {
 	--nav-h:			3.75rem;
 	--main-h:			calc(100vh - var(--nav-h));
