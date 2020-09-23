@@ -59,7 +59,8 @@
         grid-area: content
     }
     .grid :global(.side) {
-        grid-area: side
+        grid-area: side;
+        overflow: auto;
     }
     .grid :global(.footer) {
         grid-area: footer
@@ -78,7 +79,7 @@
                 "ad footer"
         }
         .grid.sidebar {
-            grid-template-columns: minmax(var(--sidebar-w), auto) 8fr;
+            grid-template-columns: minmax(auto, var(--sidebar-w)) 8fr;
             grid-template-areas:
                 "side content"
                 "ad footer"
