@@ -11,14 +11,23 @@
 <style>
 
     .grid-item {
-        display: block;
+        display: flex;
         background: #eee;
         position: relative;
         align-self: normal;
     }
 
+    .grid-item.content {
+        padding-bottom: 5rem;
+    }
+
+    :global(.content) .inner {
+        display: block;
+    }
+
     :global(.content) .outer {
         margin: 0;
+        width: 100%;
     }
 
     :global(.home) .grid-item {
@@ -26,26 +35,36 @@
     }
 
     .outer {
-        display: flex;
         margin: 0 1.25rem 0 1.25rem;
-        justify-content: center;
-    }
-
-    .inner {
         width: 100%;
     }
 
+    .inner {
+        display: flex;
+        justify-content: center;
+    }
+
     .vcenter {
-        display: flex !important;
+        display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    .hcenter {
+        display: flex;
+        justify-content: center;
+    }
+
     @media (min-width: 1024px) {
-        .outer {
+        .side .outer.vcenter {
+            justify-content: initial;
+            margin: 1rem;
+        }
+
+        .inner {
             justify-content: initial;
         }
-        .outer.hcenter {
+        .inner.hcenter {
             justify-content: center;
             
         }
@@ -53,9 +72,9 @@
 
 </style>
 
-<div class="grid-item {name}" class:is-item={name} class:vcenter>
-    <div class="outer {className}" class:hcenter>
-        <div class="inner">
+<div class="grid-item {name}" class:is-item={name}>
+    <div class="outer {className}" class:vcenter>
+        <div class="inner" class:hcenter>
             <slot inner={inner}></slot>
         </div>
     </div>
