@@ -56,9 +56,15 @@
     }
 
     @media (min-width: 1024px) {
+
+        :global(.side .grid-inner) {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
         .side .outer.vcenter {
             justify-content: initial;
-            margin: 1rem;
+            margin: 1rem 0;
         }
 
         .inner {

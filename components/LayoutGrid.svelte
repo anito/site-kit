@@ -48,6 +48,7 @@
             "side"
             "ad"
             "footer";
+        grid-template-rows: auto 3rem;
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
