@@ -12,17 +12,15 @@
 
     .grid-item {
         display: flex;
-        background: #eee;
+        background: var(--back-grid-item);
         position: relative;
         align-self: normal;
     }
 
-    .grid-item.content {
-        padding-bottom: 5rem;
-    }
-
     :global(.content) .inner {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     :global(.content) .outer {
@@ -78,7 +76,7 @@
 
 </style>
 
-<div class="grid-item {name}" class:is-item={name}>
+<div class="grid-item {name} {className}" class:is-item={name}>
     <div class="outer {className}" class:vcenter>
         <div class="inner" class:hcenter>
             <slot inner={inner}></slot>

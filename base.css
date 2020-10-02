@@ -40,22 +40,23 @@
 
 /*	theme vars */
 .theme-default {
-	--back:         #ddd;
-	--back-light:   #f6fafd;
-	--back-white:   #fff;
-	--back-api:     #eff8ff;
-	--prime-:       #ff3e00;
-	--prime:        #8c1f76;
-	--second:       #676778;
-	--alt:          #787867;
-	--flash:        #40b3ff;
-	--error:        #b71c1c;
-	--heading:      var(--second);
-	--text:         #444;
-	--text-light:  	rgb(235, 235, 235);
-	--sidebar-text: rgba(255, 255, 255, .75);
-	--border-w:     0.1875rem; /* border-width  */
-	--border-r:     0.25rem; /* border-radius */
+	--back:           #ddd;
+	--back-light:     #f6fafd;
+	--back-white:     #fff;
+	--back-api:       #eff8ff;
+	--back-grid-item: #eeeeee;
+	--prime-unused:   #ff3e00;
+	--prime:          #8c1f76;
+	--second:         #676778;
+	--alt:            #787867;
+	--flash:          #40b3ff;
+	--error:          #b71c1c;
+	--heading:        var(--second);
+	--text:           #444;
+	--text-light:  	  rgb(235, 235, 235);
+	--sidebar-text:   rgba(255, 255, 255, .75);
+	--border-w:       0.1875rem; /* border-width  */
+	--border-r:       0.25rem; /* border-radius */
 
 	--mdc-theme-primary: var(--prime);
 	--mdc-theme-secondary: var(--second);

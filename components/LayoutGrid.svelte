@@ -54,10 +54,10 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:
-            "content"
+            "content";
     }
     .grid :global(.content) {
-        grid-area: content
+        grid-area: content;
     }
     .grid :global(.side) {
         grid-area: side;
@@ -77,13 +77,13 @@
             grid-template-rows: auto 3rem;
             grid-template-areas:
                 "content content"
-                "ad footer"
+                "ad footer";
         }
         .grid.sidebar {
             grid-template-columns: minmax(auto, var(--sidebar-w)) 8fr;
             grid-template-areas:
                 "side content"
-                "ad footer"
+                "ad footer";
         }
     }
     @media (min-width: 1200px) {
@@ -92,12 +92,12 @@
             grid-template-columns: var(--sidebar-w) 6fr;
             grid-template-areas:
                 "content content"
-                "ad footer "
+                "ad footer";
         }
         .grid.sidebar {
             grid-template-areas:
-                "side content "
-                "ad footer "
+                "side content"
+                "ad footer";
         }
     }
 
