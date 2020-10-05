@@ -1,11 +1,23 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     export let name = '';
     export let hcenter = false;
     export let vcenter = false;
     export {className as class};
 
     let className = '';
+    let dispatch = createEventDispatcher();
+    
+    function clickHandler(e) {
+        dispatch('notify', {
+            target: e.target,
+            current: e.currentTarget
+        })
+    }
+
     $: inner = `grid-inner slot-${name}`;
+
 </script>
 
 <style>
@@ -26,6 +38,10 @@
     :global(.content) .outer {
         margin: 0;
         width: 100%;
+    }
+
+    :global(.grid-item.side) {
+        background-color: #e5e5e5 !important;
     }
 
     :global(.home) .grid-item {
@@ -77,7 +93,9 @@
 </style>
 
 <div class="grid-item {name} {className}" class:is-item={name}>
-    <div class="outer {className}" class:vcenter>
+    <div class="outer {className}" class:vcenter
+        on:click={clickHandler}
+    >
         <div class="inner" class:hcenter>
             <slot inner={inner}></slot>
         </div>
