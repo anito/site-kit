@@ -12,3 +12,4 @@ export { default as Header } from './components/Header.svelte';
 export { default as Scrim } from './components/Scrim.svelte';
 export { default as Dropzone } from './components/Dropzone/index.svelte';
 export { default as Modal } from './components/Modal.svelte';
+export { key } from './utils/key';
