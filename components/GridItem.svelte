@@ -27,6 +27,7 @@
         width: 100%;
     }
     .inner {
+        display: flex;
         width: 100%;
     }
 
