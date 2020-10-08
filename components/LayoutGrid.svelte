@@ -1,22 +1,24 @@
 <script>
 
-    export let segment;
+    export let segment = '';
     export let sidebar = false;
     export let stretch = false;
     export {className as class};
 
     let className = '';
+    
 </script>
 
 <style>
     main {
 		position: relative;
 		margin: 0 auto;
-		/* padding: var(--nav-h) var(--side-nav) 0 var(--side-nav); */
-		padding: var(--nav-h) 0 0 0;
 		overflow-x: hidden;
+        padding: var(--nav-h) 0 0 0;
     }
-
+    :global(main main) {
+        padding: 0 !important;
+    }
     :global(.grid-item.has-background.content) {
         background: var(--prime)
     }
@@ -48,7 +50,7 @@
             "side"
             "ad"
             "footer";
-        grid-template-rows: auto 3rem;
+        grid-template-rows: auto var(--footer-section-h);
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
@@ -74,7 +76,7 @@
 
         .grid {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 3rem;
+            grid-template-rows: auto var(--footer-section-h);
             grid-template-areas:
                 "content content"
                 "ad footer";

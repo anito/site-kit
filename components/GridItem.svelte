@@ -19,39 +19,23 @@
         align-self: normal;
     }
 
-    :global(.content) .inner {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    :global(.content) .outer {
-        margin: 0;
-        width: 100%;
-    }
-
     :global(.home) .grid-item {
         background: var(--back-white);
     }
 
-    .outer {
-        margin: 0 1.25rem 0 1.25rem;
+    :global(.grid-inner) {
         width: 100%;
     }
-
     .inner {
-        display: flex;
-        justify-content: center;
-        flex: 1;
+        width: 100%;
     }
 
     .vcenter {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
     }
 
-    .hcenter {
+    :global(.hcenter .grid-inner) {
         display: flex;
         justify-content: center;
     }
@@ -62,25 +46,22 @@
             display: flex;
             flex: 1;
         }
-        .side .outer.vcenter {
+        .side .inner.vcenter {
             justify-content: initial;
             margin: 0;
         }
-        .inner {
-            justify-content: initial;
+        .inner.vcenter {
+            justify-content: center;
         }
         .inner.hcenter {
             justify-content: center;
-            
         }
     }
 
 </style>
 
 <div class="grid-item {name} {className}" class:is-item={name}>
-    <div class="outer {className}" class:vcenter>
-        <div class="inner" class:hcenter>
+    <div class="inner {className}" class:vcenter class:hcenter>
             <slot inner={inner}></slot>
-        </div>
     </div>
 </div>
