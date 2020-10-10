@@ -33,7 +33,7 @@
     }
     .grid {
         display: grid;
-        grid-gap: 5px;
+        grid-gap: var(--grid-gap);
         grid-template-rows: auto 3rem 3rem 3rem;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -50,7 +50,7 @@
             "side"
             "ad"
             "footer";
-        grid-template-rows: auto var(--footer-section-h);
+        grid-template-rows: calc(var(--main-h) - 3rem) 3rem var(--footer-section-h) var(--footer-section-h);
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
@@ -76,13 +76,14 @@
 
         .grid {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto var(--footer-section-h);
+            grid-template-rows: calc(var(--main-h) - var(--footer-section-h)) var(--footer-section-h);
             grid-template-areas:
                 "content content"
                 "ad footer";
         }
         .grid.sidebar {
             grid-template-columns: minmax(auto, var(--sidebar-w)) 8fr;
+            grid-template-rows: calc(var(--main-h) - var(--footer-section-h)) var(--footer-section-h);
             grid-template-areas:
                 "side content"
                 "ad footer";
@@ -110,7 +111,6 @@
         {segment}
         grid
         {className}"
-        style="min-height: var(--main-h);"
     >
         <slot></slot>
     </div>

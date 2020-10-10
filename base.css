@@ -24,7 +24,8 @@
 	--player-w:			calc(100vw - var(--player-m-x));
 	--breadcrumb-h:		2.5rem;
     --footer-section-h: 3rem;
-    --toolbar-h:		3rem;
+	--toolbar-h:		3rem;
+	--grid-gap:			5px;
 	/* easings */
 	--out-back:			cubic-bezier(0.175, 0.885, 0.32, 1.275);
 

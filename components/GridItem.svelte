@@ -18,24 +18,26 @@
         position: relative;
         align-self: normal;
     }
-
     :global(.home) .grid-item {
         background: var(--back-white);
     }
-
+    :global(.home .grid-inner) {
+        display: inline-block;
+    }
     :global(.grid-inner) {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
         width: 100%;
     }
     .inner {
         display: flex;
         width: 100%;
     }
-
     .vcenter {
         display: flex;
         align-items: center;
     }
-
     :global(.hcenter .grid-inner) {
         display: flex;
         justify-content: center;
