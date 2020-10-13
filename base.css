@@ -62,11 +62,18 @@
 	--border-w:       0.1875rem; /* border-width  */
 	--border-r:       0.25rem; /* border-radius */
 
-	--mdc-theme-primary: var(--prime);
-	--mdc-theme-secondary: var(--second);
-	--mdc-theme-error: var(--error);
-	--mdc-theme-background: var(--back-white);
-	--mdc-theme-surface: var(--back-white);
+	--mdc-theme-primary:	var(--prime);
+	--mdc-theme-secondary:	var(--second);
+	--mdc-theme-error:		var(--error);
+	--mdc-theme-background:	var(--back-white);
+	--mdc-theme-surface:	var(--back-white);
+
+	--drp-theme-primary:	var(--prime);
+	--drp-theme-selection:	#c98fbd;
+	--drp-theme-readout-bg:	var(--prime);
+	--drp-theme-readout-c:	var(--text-light);
+	--drp-theme-border-r:	0;
+
 
 }
 /*	typo vars */

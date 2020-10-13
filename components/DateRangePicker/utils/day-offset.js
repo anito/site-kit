@@ -1,3 +1,5 @@
+import { get } from 'svelte/store';
+import { __locale__ } from '../stores/localeStore.js';
 /**
  *
  * @param {string} firstDayOfWeek
@@ -13,4 +15,4 @@ export const dayOffset = firstDayOfWeek =>
     "thursday",
     "friday",
     "saturday"
-  ].indexOf(firstDayOfWeek.toLocaleLowerCase(window.__locale__))
+  ].indexOf(firstDayOfWeek.toLocaleLowerCase( get(__locale__) ))

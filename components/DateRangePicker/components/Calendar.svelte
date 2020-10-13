@@ -93,7 +93,7 @@
   }
 </script>
 
-<div class="s-calendar">
+<div class="calendar">
   <Controls
     {btnClass}
     {maxDate}

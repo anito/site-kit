@@ -1,3 +1,4 @@
+import { get } from 'svelte/store';
 import {
   addDays,
   differenceInCalendarWeeks,
@@ -7,9 +8,11 @@ import {
   addWeeks,
   subMonths,
   startOfWeek
-} from "date-fns"
-import { dayOffset } from "./day-offset"
-import { getDayMetaData } from "./get-day-meta-data"
+} from "date-fns";
+import { dayOffset } from "./day-offset";
+import { getDayMetaData } from "./get-day-meta-data";
+import { __locale__ } from '../stores/localeStore.js';
+
 /**
  *
  * @param {Object} getDayMetaDataParams
@@ -56,11 +59,11 @@ export const getCalendarWeeks = getDayMetaDataParams => {
       start,
       end: addWeeks(start, 5)
     },
-    { weekStartsOn, locale: window.__locale__ }
+    { weekStartsOn, locale: get(__locale__) }
   ).map(date => ({
     weeksFromToday: differenceInCalendarWeeks(date, today, {
       weekStartsOn,
-      locale: window.__locale__
+      locale: get(__locale__)
     }),
     weekNumber: getWeek(date, { weekStartsOn }),
     daysInWeek: buildWeek(date, getDayMetaDataParams)

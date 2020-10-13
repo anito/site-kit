@@ -9,7 +9,7 @@
     subMonths,
     subWeeks
   } from "date-fns";
-  import { localeFormat } from "@sveltejs/site-kit/components/DateRangePicker/utils";
+  import { localeFormat } from "../utils";
 
   export let day
   export let monthIndicator
@@ -17,7 +17,6 @@
   let mouseDownDate = null
 
   const dispatchEvent = createEventDispatcher()
-
   const getEl = date =>
     document.querySelector(`[data-date="${localeFormat(date, "yyyy-MM-dd")}"]`)
   // Enter should submit / apply the selection, not activate a button.
@@ -89,19 +88,19 @@
 
 <style>
 
-  .s-day {
+  .day {
     position: relative;
   }
 
-  .s-day::after {
+  .day::after {
     content: "";
     top: 0;
     position: absolute;
     opacity: 0;
   }
 
-  .s-day:not(.disabled):not(.next-month):not(.prev-month)::after {
-    background-color: var(--dtp-theme-selection);
+  .day:not(.disabled):not(.next-month):not(.prev-month)::after {
+    background-color: var(--drp-theme-selection);
   }
 
   .within-selection:not(.start-date):not(.end-date)::after {
@@ -129,7 +128,7 @@
   }
 
   button:focus {
-    box-shadow: inset 0 0 0 2px var(--dtp-theme-primary);
+    box-shadow: inset 0 0 0 2px var(--drp-theme-primary);
   }
 
   .end-date::after {
@@ -166,14 +165,14 @@
   .start-date:not(.next-month):not(.prev-month) button,
   .end-date:not(.next-month):not(.prev-month) button,
   button:not(:disabled):hover {
-    background-color: var(--dtp-theme-primary);
+    background-color: var(--drp-theme-primary);
     /* Overwrite .muted class for prev/next months */
     color: white !important;
   }
 </style>
 
 <div
-  class="s-day"
+  class="day"
   class:disabled={day.isDisabled}
   class:end-date={day.isEndDate}
   class:today={day.isToday}
