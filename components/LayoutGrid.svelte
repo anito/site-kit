@@ -19,6 +19,9 @@
     :global(main main) {
         padding: 0 !important;
     }
+    :global(.grid .grid) {
+		background: var(--back);
+	}
     :global(.grid-item.has-background.content) {
         background: var(--prime)
     }
@@ -31,17 +34,20 @@
     :global(.grid-item.has-background.ad) {
         background: var(--alt)
     }
+    :global(.ismobile) .grid {
+        height: -webkit-fill-available;
+    }
     .grid {
         display: grid;
         grid-gap: var(--grid-gap);
-        grid-template-rows: auto 3rem 3rem 3rem;
+        grid-template-rows: repeat(2, auto) repeat(2, 3rem);
         grid-template-columns: 1fr;
         grid-template-areas:
             "content"
             "content"
             "ad"
             "footer";
-        min-height: var(--main-h);
+        height: var(--main-h);
     }
     .grid.sidebar {
         grid-template-columns: 1fr;
@@ -50,7 +56,7 @@
             "side"
             "ad"
             "footer";
-        grid-template-rows: calc(var(--main-h) - 3rem) 3rem var(--footer-section-h) var(--footer-section-h);
+        grid-template-rows: auto 3rem var(--footer-section-h) var(--footer-section-h);
     }
     .grid.full-grid {
         grid-template-columns: 1fr;
@@ -60,6 +66,7 @@
     }
     .grid :global(.content) {
         grid-area: content;
+        overflow: auto;
     }
     .grid :global(.side) {
         grid-area: side;
@@ -76,14 +83,14 @@
 
         .grid {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: calc(var(--main-h) - var(--footer-section-h)) var(--footer-section-h);
+            grid-template-rows: auto var(--footer-section-h);
             grid-template-areas:
                 "content content"
                 "ad footer";
         }
         .grid.sidebar {
             grid-template-columns: minmax(auto, var(--sidebar-w)) 8fr;
-            grid-template-rows: calc(var(--main-h) - var(--footer-section-h)) var(--footer-section-h);
+            grid-template-rows: auto var(--footer-section-h);
             grid-template-areas:
                 "side content"
                 "ad footer";

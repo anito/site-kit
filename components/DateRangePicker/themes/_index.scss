@@ -2,10 +2,9 @@
 
 .date-range-picker {
   font-family: $font-family;
-  background-color: #fff;
   padding: 16px;
-  border: 1px solid $borderColor;
-  border-radius: $borderRadius;
+  border: 1px solid var(--drp-theme-border-c);
+  border-radius: var(--drp-theme-border-r);
   user-select: none;
 
   & > label {
@@ -29,8 +28,23 @@
     cursor: pointer;
   }
 
+  .test {
+    background-color: #ff0000;
+  }
+
   :disabled {
     cursor: not-allowed;
+  }
+
+  &.disabled {
+    opacity: .3;
+
+    button,
+    select,
+    a {
+        pointer-events: none;
+    }
+
   }
 }
 
