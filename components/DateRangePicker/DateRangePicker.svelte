@@ -71,6 +71,7 @@
 	let navigator;
 	let tempStartDate;
 	let months;
+	// let canApply = () => {};
 
 	const dispatch = createEventDispatcher();
 
@@ -98,7 +99,6 @@
 		}
 		return `${divider}${ret}`;
 	}
-	$: resetTrigger && resetView();
 	$: canResetView = !isSameMonth(tempStartDate, months[0])
 	$: lang = locale
 		? locale.code
@@ -107,8 +107,32 @@
 		: navigator && navigator.language
 		? navigator.language
 		: ''
+	$: canApply = () => {
+		if (!hasSelection) {
+			return false
+		}
 
-	// Round and set temp start & end dates based on start & end date props
+		if (timePicker) {
+			if (timePickerSeconds) {
+				return (
+					!isSameSecond(tempStartDate, startDate) ||
+					(!singlePicker && !isSameSecond(tempEndDate, endDate))
+				)
+			}
+
+			return (
+				!isSameMinute(tempStartDate, startDate) ||
+				(!singlePicker && !isSameMinute(tempEndDate, endDate))
+			)
+		}
+
+		return (
+			!isSameDay(tempStartDate, startDate) ||
+			(!singlePicker && !isSameDay(tempEndDate, endDate))
+		)
+	}
+	$: resetTrigger && resetView();
+
 	onMount(() => {
 		calendarRef = document.querySelector(".calendar");
 		navigator = window.navigator;
@@ -340,31 +364,6 @@
 			tempEndDate = newDate
 		}
 	}
-	
-	$: canApply = () => {
-		if (!hasSelection) {
-			return false
-		}
-
-		if (timePicker) {
-			if (timePickerSeconds) {
-				return (
-					!isSameSecond(tempStartDate, startDate) ||
-					(!singlePicker && !isSameSecond(tempEndDate, endDate))
-				)
-			}
-
-			return (
-				!isSameMinute(tempStartDate, startDate) ||
-				(!singlePicker && !isSameMinute(tempEndDate, endDate))
-			)
-		}
-
-		return (
-			!isSameDay(tempStartDate, startDate) ||
-			(!singlePicker && !isSameDay(tempEndDate, endDate))
-		)
-	}
   
 </script>
 
@@ -405,8 +404,8 @@
 	}
 	.date-range-picker :global(.cell),
 	.date-range-picker :global(.day::after) {
-		width: 36px;
-		height: 36px;
+		width: 30px;
+		height: 30px;
 	}
 	.date-range-picker :global(.cell) {
 		position: relative;
@@ -429,6 +428,9 @@
   }
   .months > :global(*) {
 	  padding: 1rem;
+  }
+  .actions {
+	  margin: 1rem 0;
   }
   .readout {
       background: var(--drp-theme-readout-bg);

@@ -90,7 +90,8 @@
         }
         .grid.sidebar {
             grid-template-columns: minmax(auto, var(--sidebar-w)) 8fr;
-            grid-template-rows: auto var(--footer-section-h);
+            /* grid-template-rows: auto var(--footer-section-h); */
+            grid-template-rows: calc(var(--main-h) - var(--footer-section-h)) var(--footer-section-h);
             grid-template-areas:
                 "side content"
                 "ad footer";

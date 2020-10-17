@@ -15,7 +15,7 @@
   {#each daysOfWeek as dayOfWeek}
     <small
       aria-label={localeFormat(dayOfWeek, "EEEE")}
-      class="cell muted"
+      class="days-of-week cell muted"
       role="gridcell">
       {localeFormat(dayOfWeek, "eeeeee")}
     </small>
