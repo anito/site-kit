@@ -429,6 +429,9 @@ table code, table span {
 	right: 0;
 }
 /*	misc ----------------------------------- */
+.text-inherit > * {
+	font-size: inherit;
+}
 .inline > .inline-item:not(:first-child) {
 	margin-left: 15px;
 }
