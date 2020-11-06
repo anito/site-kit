@@ -29,7 +29,6 @@
   "bundleDependencies": false,
   "dependencies": {
     "@sindresorhus/slugify": "^0.9.1",
-    "dropzone": "^5.7.1",
     "golden-fleece": "^1.0.9"
   },
   "deprecated": false,
@@ -37,7 +36,8 @@
   "devDependencies": {
     "esm": "^3.2.25",
     "mocha": "^6.2.0",
-    "svelte": "^3.9.2"
+    "svelte": "^3.9.2",
+    "dropzone": "^5.7.1"
   },
   "files": [
     "index.mjs",
