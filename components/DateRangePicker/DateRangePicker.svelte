@@ -60,6 +60,8 @@
   export let yearDropdown = true;
   export let resetTrigger = undefined;
   export let disabled = false;
+  export let customHeaderHeight = false;
+  export { className as class };
 
   /** @todo Implement props/options */
   // export let maxSpan = null;
@@ -71,6 +73,7 @@
   let navigator;
   let tempStartDate;
   let months;
+  let className = "";
 
   const dispatch = createEventDispatcher();
 
@@ -447,8 +450,9 @@
 <form
   {lang}
   dir={rtl ? 'rtl' : 'ltr'}
-  class="date-range-picker"
+  class="date-range-picker {className}"
   class:disabled
+  class:custom-header-height={customHeaderHeight}
   on:submit|preventDefault={apply}>
   <label class="readout">
     {`${startDateReadout()}${endDateReadout()}`}
