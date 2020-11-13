@@ -32,5 +32,5 @@
 </style>
 
 <div bind:this={container} class="svelte-header {className}">
-  <slot>No Content</slot>
+  <slot />
 </div>
