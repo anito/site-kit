@@ -214,6 +214,8 @@ tt, code, kbd, samp {
 	font: 400 var(--code-fs)/1.7 var(--font-mono);
 }
 
+button:focus { outline: none }
+
 code {
 	position: relative;
 	border-radius: .3em;
