@@ -19,19 +19,19 @@
     }
 
     let svDropzone = new Dropzone(`#${id}`, {
-      ...options
+      ...options,
     });
     if (autoDiscover !== true) {
       Dropzone.autoDiscover = false;
     }
 
-    svDropzone.on("addedfile", f => {
+    svDropzone.on("addedfile", (f) => {
       dropzoneElement.classList.remove(hoveringClass);
     });
-    svDropzone.on("dragenter", e => {
+    svDropzone.on("dragenter", (e) => {
       dropzoneElement.classList.toggle(hoveringClass);
     });
-    svDropzone.on("dragleave", e => {
+    svDropzone.on("dragleave", (e) => {
       dropzoneElement.classList.toggle(hoveringClass);
     });
     Object.entries(dropzoneEvents).map(([eventKey, eventFunc]) =>
@@ -66,7 +66,7 @@
   }
 </style>
 
-<div class={dropzoneClass} {id}>
+<div action="#" class={dropzoneClass} {id}>
   <slot />
   <input hidden name="sites_data" type="file" />
 </div>
