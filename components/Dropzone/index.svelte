@@ -3,7 +3,6 @@
   export let dropzoneEvents = {};
   export let options = { previewTemplate: "<div/>" };
   export let dropzoneClass = "dropzone";
-  export let style = "";
   export let hoveringClass = "dropzone-hovering";
   export let id = "dropId";
   export let autoDiscover = false;
@@ -26,12 +25,11 @@
   this={DROPZONESSR}
   {dropzoneEvents}
   {options}
-  {style}
   {dropzoneClass}
   {hoveringClass}
   {autoDiscover}
   {id}>
-  <slot {id}>
+  <slot>
     <p class="dropzoneDefaultSentence">
       drop your file(s) here or click to add file
     </p>
