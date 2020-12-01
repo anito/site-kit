@@ -433,7 +433,7 @@
     padding: 1rem;
   }
   .actions {
-    margin: 1rem 0;
+    padding: 2rem 0;
   }
   .readout {
     background: var(--drp-theme-readout-bg);
