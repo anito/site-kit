@@ -61,6 +61,8 @@
   export let resetTrigger = undefined;
   export let disabled = false;
   export let customHeaderHeight = false;
+  export let label = false;
+  export let readout;
   export { className as class };
 
   /** @todo Implement props/options */
@@ -89,7 +91,7 @@
 
     return localeFormat(tempStartDate, dateFormat);
   };
-  $: endDateReadout = (divider = " - ") => {
+  $: endDateReadout = () => {
     let ret;
     if (!hasSelection) {
       if (isBefore(tempEndDate, tempStartDate)) {
@@ -99,8 +101,9 @@
     } else {
       ret = localeFormat(tempEndDate, dateFormat);
     }
-    return `${divider}${ret}`;
+    return ret;
   };
+  $: readout = `${startDateReadout()}-${endDateReadout()}`;
   $: canResetView = !isSameMonth(tempStartDate, months[0]);
   $: lang = locale
     ? locale.code
@@ -443,6 +446,9 @@
   form {
     display: grid;
     height: 100%;
+    grid-template-rows: auto auto 1fr;
+  }
+  form.has-label {
     grid-template-rows: 4rem auto auto 1fr;
   }
 </style>
@@ -453,11 +459,11 @@
   class="date-range-picker {className}"
   class:disabled
   class:custom-header-height={customHeaderHeight}
+  class:has-label={label}
   on:submit|preventDefault={apply}>
-  <label class="readout">
-    {`${startDateReadout()}${endDateReadout()}`}
-    <input type="hidden" />
-  </label>
+  {#if label}
+    <label class="readout"> {readout} <input type="hidden" /> </label>
+  {/if}
   <div class="months space-around">
     {#each months as month, index}
       <Calendar
