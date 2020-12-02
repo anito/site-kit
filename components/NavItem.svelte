@@ -16,10 +16,11 @@
 
 {#if external}
   <li>
-    <a target={blank ? '_blank' : ''} href={external} {title}><slot /></a>
+    <a target={blank ? '_blank' : ''} href={external} {title}><slot
+        {active} /></a>
   </li>
 {:else}
   <li class:active>
-    <a rel="prefetch" {href} {title}><slot /></a>
+    <a rel="prefetch" {href} {title}><slot {active} /></a>
   </li>
 {/if}

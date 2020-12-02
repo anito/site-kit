@@ -204,7 +204,7 @@
 
     ul.open {
       padding: 0;
-      background: white;
+      background: transparent;
       border: none;
       align-self: initial;
     }
@@ -226,6 +226,7 @@
 
     ul :global(li) {
       display: inline !important;
+      padding-left: 5px;
     }
 
     .hide-if-desktop {
