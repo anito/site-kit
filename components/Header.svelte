@@ -18,7 +18,11 @@
     if (!h) h = LEVEL;
 
     const header = document.createElement(`h${h}`);
-    mdc && header.classList.add(`mdc-typography--headline${h}`);
+    mdc && (className = className.concat(` mdc-typography--headline${h}`));
+    className
+      .trim()
+      .split(/\s+/g)
+      .map((cls) => cls && header.classList.add(cls));
     header.append(container.childNodes[0]);
     container.prepend(header);
   });
@@ -26,11 +30,10 @@
 
 <style>
   :global([class*="mdc-typography--headline"]) {
-    margin: 0.2em 0 0.5em;
     color: inherit;
   }
 </style>
 
-<div bind:this={container} class="svelte-header {className}">
+<div bind:this={container} class="svelte-header">
   <slot />
 </div>

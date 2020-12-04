@@ -103,7 +103,7 @@
     }
     return ret;
   };
-  $: readout = `${startDateReadout()}-${endDateReadout()}`;
+  $: readout = `${startDateReadout()} - ${endDateReadout()}`;
   $: canResetView = !isSameMonth(tempStartDate, months[0]);
   $: lang = locale
     ? locale.code
