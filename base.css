@@ -214,7 +214,7 @@ tt, code, kbd, samp {
 	font: 400 var(--code-fs)/1.7 var(--font-mono);
 }
 
-*:focus { outline: none }
+*:focus { outline: none !important}
 
 code {
 	position: relative;

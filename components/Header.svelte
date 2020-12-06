@@ -32,6 +32,12 @@
   :global([class*="mdc-typography--headline"]) {
     color: inherit;
   }
+  .svelte-header > :global(:first-child) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: initial;
+  }
 </style>
 
 <div bind:this={container} class="svelte-header">
