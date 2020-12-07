@@ -216,6 +216,7 @@ tt, code, kbd, samp {
 }
 
 *:focus { outline: none !important}
+.hidden { display: none !important}
 
 code {
 	position: relative;
