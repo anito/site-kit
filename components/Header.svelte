@@ -7,6 +7,7 @@
 
   const regex = /[1-6]/g;
   const DEFAULT_LEVEL = "1";
+
   export let h = DEFAULT_LEVEL;
   export { className as class };
   export let mdc = false;

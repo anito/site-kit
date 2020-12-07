@@ -52,6 +52,7 @@
 	--back-dark:      #868585;
 	--back-api:       #eff8ff;
 	--back-grid-item: #eeeeee;
+	--background:     #f6fafd;
 	--prime-unused:   #ff3e00;
 	--prime:          #8c1f76;
 	--second:         #676778;
@@ -215,6 +216,7 @@ tt, code, kbd, samp {
 }
 
 *:focus { outline: none !important}
+.hidden { display: none !important}
 
 code {
 	position: relative;
