@@ -445,7 +445,6 @@
   }
   form {
     display: grid;
-    height: 100%;
     grid-template-rows: auto auto 1fr;
   }
   form.has-label {
