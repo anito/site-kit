@@ -232,6 +232,11 @@ pre code {
 	background-color: none;
 }
 
+details summary {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 /* sync CodeMirror with prism  */
 .CodeMirror {
 	font-size: var(--code-fs) !important;
