@@ -60,6 +60,8 @@
 	--flash:          #40b3ff;
 	--error:          #b71c1c;
 	--info:           #536b86;
+	--success:        var(--prime);
+	--warning:        var(--prime-unused);
 	--heading:        var(--second);
 	--text:           #444;
 	--text-light:  	  rgb(235, 235, 235);
@@ -217,6 +219,10 @@ tt, code, kbd, samp {
 
 *:focus { outline: none !important}
 .hidden { display: none !important}
+.frozen *, input.frozen, a.frozen, button.frozen {
+	pointer-events: none;
+	cursor: not-allowed;
+}
 
 code {
 	position: relative;
