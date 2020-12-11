@@ -11,6 +11,7 @@
   export let h = DEFAULT_LEVEL;
   export { className as class };
   export let mdc = false;
+  export let style = "";
 
   onMount(() => {
     h = h.toString();
@@ -25,6 +26,7 @@
       .split(/\s+/g)
       .map((cls) => cls && header.classList.add(cls));
     header.append(container.childNodes[0]);
+    style && header.setAttribute("style", style);
     container.prepend(header);
   });
 </script>
@@ -38,6 +40,15 @@
     overflow: hidden;
     white-space: nowrap;
     line-height: initial;
+  }
+  .svelte-header :global(.success) {
+    color: var(--success);
+  }
+  .svelte-header :global(.warning) {
+    color: var(--warning);
+  }
+  .svelte-header :global(.info) {
+    color: var(--info);
   }
 </style>
 
