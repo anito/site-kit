@@ -41,15 +41,6 @@
     white-space: nowrap;
     line-height: initial;
   }
-  .svelte-header :global(.success) {
-    color: var(--success);
-  }
-  .svelte-header :global(.warning) {
-    color: var(--warning);
-  }
-  .svelte-header :global(.info) {
-    color: var(--info);
-  }
 </style>
 
 <div bind:this={container} class="svelte-header">
