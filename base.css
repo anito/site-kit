@@ -70,7 +70,7 @@
 	--border-r:       0.25rem; /* border-radius */
 
 	--mdc-theme-primary:	var(--prime);
-	--mdc-theme-secondary:	var(--second);
+	--mdc-theme-secondary:	var(--flash);
 	--mdc-theme-error:		var(--error);
 	--mdc-theme-background:	var(--back-white);
 	--mdc-theme-surface:	var(--back-white);
@@ -164,10 +164,12 @@ body,
 /*	link reset ----------------------------- */
 a {
 	text-decoration: none;
-	cursor: pointer;
+	cursor: inherit;
 	color: inherit;
 }
-
+a[href] {
+    cursor: pointer;
+}
 a:hover, a:active { color: var(--flash) }
 
 /*
