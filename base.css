@@ -70,7 +70,7 @@
 	--border-r:       0.25rem; /* border-radius */
 
 	--mdc-typography-font-family: var(--font);
-	
+
 	--mdc-theme-primary:	var(--prime);
 	--mdc-theme-secondary:	var(--flash);
 	--mdc-theme-error:		var(--error);
@@ -81,8 +81,10 @@
 	--drp-theme-selection:	#c98fbd;
 	--drp-theme-readout-bg:	var(--prime);
 	--drp-theme-readout-c:	var(--text-light);
-	--drp-theme-border-c:	var(--back-ap);
+	--drp-theme-border-c:	none;
 	--drp-theme-border-r:	0;
+	--drp-theme-label-c:	var(--back-white);
+	--drp-theme-label-bg:	var(--back-white);
 
 
 }

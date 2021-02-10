@@ -1,16 +1,16 @@
 @import "./variables.scss";
 
 .date-range-picker {
-  font-family: $font-family;
-  border: 1px solid var(--drp-theme-border-c);
-  border-radius: var(--drp-theme-border-r);
+  font-family: $fontFamily;
+  border: 1px solid $borderColor;
+  border-radius: $borderRadius;
   user-select: none;
 
   & > label {
     display: block;
     margin-bottom: 1em;
-    color: var(--drp-theme-label-c);
-    background: var(--drp-theme-label-bg)
+    color: $labelColor;
+    background: $labelBackground;
   }
 
   .picker-btn, .picker-select {
@@ -18,12 +18,12 @@
     min-width: 30px;
     margin: 2px;
     background-color: transparent;
-    border: 1px solid var(--drp-theme-border-c);
-    border-radius: var(--drp-theme-border-r);
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
   }
 
   select, button {
-    font-family: $font-family;
+    font-family: $fontFamily;
     cursor: pointer;
   }
 
